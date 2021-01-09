@@ -14,7 +14,7 @@
                             <h1 class="font-semibold text-xl text-gray-800 leading-tight">Total user used: {{ $count_ip }}</h1>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped table-hover" style="width:100%;">
+                            <table class="table table-hover" style="width:100%;">
                                 <thead>
                                     <tr>
                                         <th style="width:20%;">IP</th>
