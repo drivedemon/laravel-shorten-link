@@ -23,10 +23,9 @@ class ShortenLinkController extends Controller
 
     public function store(ShotenLinkRequest $request)
     {
-        $uniqCode = "bluebik/".uniqid();
         ShortenLink::create([
             ShortenLink::LINK => $request->link,
-            ShortenLink::CODE => $uniqCode,
+            ShortenLink::CODE => uniqid(),
             ShortenLink::OWNER_IP => $this->ownerIp,
         ]);
 
@@ -35,8 +34,8 @@ class ShortenLinkController extends Controller
 
     public function shortenLink($code)
     {
-        $Link = ShortenLink::where(['code' => $code, 'owner_ip' => $this->owner_ip])->latest()->first();
+        $data = ShortenLink::where(['code' => $code, 'owner_ip' => $this->ownerIp])->latest()->first();
 
-        return redirect($find->link);
+        return redirect($data->link);
     }
 }

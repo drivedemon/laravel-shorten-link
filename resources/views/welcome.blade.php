@@ -79,11 +79,13 @@
                             <thead>
                                 <tr>
                                     <th>Short Link</th>
+                                    <th>URL</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><a href="{{ route('shorten.link', $shortenLink->code) }}" target="_blank">{{ route('shorten.link', $shortenLink->code) }}</a></td>
+                                    <td>{{ $shortenLink->link }}</td>
                                 </tr>
                             </tbody>
                         </table>
