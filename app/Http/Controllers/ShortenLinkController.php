@@ -35,6 +35,9 @@ class ShortenLinkController extends Controller
     public function shortenLink($code)
     {
         $data = ShortenLink::where(['code' => $code, 'owner_ip' => $this->ownerIp])->latest()->first();
+        LogLink::create([
+            LogLink::LINK_ID => $data->id,
+        ]);
 
         return redirect($data->link);
     }

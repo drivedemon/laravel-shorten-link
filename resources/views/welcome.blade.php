@@ -34,7 +34,7 @@
             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Sign up</a>
             @endif
             @endauth
         </div>
@@ -42,7 +42,7 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="container">
-                <h1 class="text-center">A URL shortener built with powerful tools to help you grow and protect your brand.</h1>
+                <h1 class="text-center">A URL shortener build with powerful tools to help you grow and protect your brand.</h1>
                 <br>
                 <div class="card">
                     <div class="card-header">
