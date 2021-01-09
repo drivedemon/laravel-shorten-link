@@ -29,12 +29,12 @@
         @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+            <a href="{{ url('/dashboard') }}" class="btn btn-outline-success text-sm text-gray-700">Dashboard</a>
             @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+            <a href="{{ route('login') }}" class="btn btn-outline-dark text-sm text-gray-700">Login</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Sign up</a>
+            <a href="{{ route('register') }}" class="btn btn-outline-dark ml-2 text-sm text-gray-700">Sign up</a>
             @endif
             @endauth
         </div>
@@ -82,10 +82,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($shorten_links as $shorten_link)
                                 <tr>
                                     <td><a href="{{ route('shorten.link', $shorten_link->code) }}" target="_blank">{{ route('shorten.link', $shorten_link->code) }}</a></td>
                                     <td>{{ $shorten_link->link }}</td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

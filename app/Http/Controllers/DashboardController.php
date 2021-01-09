@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $shorten_links = ShortenLink::with('Log')->get();
+        $shorten_links = ShortenLink::with('Log')->latest()->get();
         $count_ip = $shorten_links->groupBy('owner_ip')->count();
         foreach ($shorten_links as $shorten_link) {
             $shorten_link->count_log = count($shorten_link->Log);

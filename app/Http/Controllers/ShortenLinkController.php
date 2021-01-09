@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ShotenLinkRequest;
 use App\Models\LogLink;
 use App\Models\ShortenLink;
+use Carbon\Carbon;
 use Request;
 
 class ShortenLinkController extends Controller
@@ -16,9 +17,12 @@ class ShortenLinkController extends Controller
 
     public function index()
     {
-        $shorten_link = ShortenLink::whereOwnerIp($this->owner_ip)->latest()->first();
+        $shorten_links = ShortenLink::whereOwnerIp($this->owner_ip)
+            ->whereDate('created_at', '=', Carbon::now())
+            ->latest()
+            ->get();
 
-        return view('welcome', compact('shorten_link'));
+        return view('welcome', compact('shorten_links'));
     }
 
     public function store(ShotenLinkRequest $request)
