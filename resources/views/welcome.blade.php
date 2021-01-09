@@ -74,7 +74,6 @@
                         </div>
                         @endif
 
-
                         <table class="table table-bordered table-sm">
                             <thead>
                                 <tr>

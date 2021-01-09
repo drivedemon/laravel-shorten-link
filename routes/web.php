@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShortenLinkController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,5 @@ Route::post('generate-shorten-link', [ShortenLinkController::class, 'store'])->n
 Route::get('bluebik/{code}', [ShortenLinkController::class, 'shortenLink'])->name('shorten.link');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
-  Route::get('dashboard', function () {
-    return view('dashboard');
-  })->name('dashboard');
+  Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
