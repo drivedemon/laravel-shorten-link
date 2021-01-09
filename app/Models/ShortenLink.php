@@ -11,6 +11,7 @@ class ShortenLink extends Model
 {
     use HasFactory;
 
+    const ID = 'id';
     const CODE = 'code';
     const LINK = 'link';
     const OWNER_IP = 'owner_ip';
@@ -28,6 +29,6 @@ class ShortenLink extends Model
      */
     public function Log(): HasMany
     {
-        return $this->hasMany(LogLink::class);
+        return $this->hasMany(LogLink::class, LogLink::LINK_ID);
     }
 }
