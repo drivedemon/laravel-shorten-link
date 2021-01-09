@@ -83,8 +83,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><a href="{{ route('shorten.link', $shortenLink->code) }}" target="_blank">{{ route('shorten.link', $shortenLink->code) }}</a></td>
-                                    <td>{{ $shortenLink->link }}</td>
+                                    <td><a href="{{ route('shorten.link', $shorten_link->code) }}" target="_blank">{{ route('shorten.link', $shorten_link->code) }}</a></td>
+                                    <td>{{ $shorten_link->link }}</td>
                                 </tr>
                             </tbody>
                         </table>
